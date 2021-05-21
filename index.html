@@ -14,42 +14,42 @@
         }
 
         .menu {
-            width: auto;
+            width: 30%;
             background-color: rgba(255, 255, 255, 0.8);
-            padding: 10px;
-
+            padding: 2% 4% 2% 4%;
+            margin: 3% 33% 3% 33%;
+            height: 100%;
             border-bottom: 1px solid #ededed;
-            line-height: 80px;
             text-align: center;
-            font-size: 28px;
+            font-size: 10px;
             font-weight: bold;
-            float: left;
+        }
+        .menu-content{
+            padding: 0px;
+            margin: 0px;
         }
 
         .menu-btn {
-            margin: 0 15px;
-            width: calc(100% - 30px);
+            width: 20%;
             background-color: #64dcdc;
-            outline: 0;
             border-color: #64dcdc;
-            height: 45px;
         }
 
         .grid {
-            height: 100%;
-            display: inline-grid;
+            height: 60%;
+            display: grid;
             grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
             background-color: rgba(255, 255, 255, 0.5);
-            grid-gap: 10px;
-            padding: 10px;
+            grid-gap: 2px;
+            padding: 2px;
         }
 
         .grid-item {
             background-color: rgba(255, 255, 255, 0.8);
             border: 1px solid rgba(0, 0, 0, 0.8);
 
-            padding: 20px;
-            font-size: 30px;
+            padding: 5px;
+            font-size: 15px;
             text-align: center;
             /* width: 30px;
             height: 30px; */
@@ -61,16 +61,18 @@
     <div>
         <div class="menu">
             <header>Search Visualizer</header>
-            <input id="target" type="text" placeholder="Target Number">
+            <input class="menu-btn" id="target" type="text" placeholder="Target Number">
             <div>
                 <header>Binary Search</header>
                 <button class="menu-btn" type="button" onclick="binarySearch()">Search</button>
-                <p>Number of Comparisons:</p><p id="binaryComparison"></p>
+                <p class="menu-content">Number of Comparisons:</p>
+                <p class="menu-content" id="binaryComparison">0</p>
             </div>
             <div>
                 <header>Linear Search</header>
                 <button class="menu-btn" type="button" onclick="linearSearch()">Search</button>
-                <p>Number of Comparisons:</p><p id="linearComparison"></p>
+                <p class="menu-content">Number of Comparisons:</p>
+                <p class="menu-content" id="linearComparison">0</p>
             </div>
         </div>
         <div class="grid" id="array"></div>
