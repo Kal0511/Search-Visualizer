@@ -2,82 +2,33 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Visualizer</title>
-    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
-        integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"> -->
-    <style>
-        body {
-            height: 100%;
-            background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
-        }
-
-        .menu {
-            width: 30%;
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 2% 4% 2% 4%;
-            margin: 3% 33% 3% 33%;
-            height: 100%;
-            border-bottom: 1px solid #ededed;
-            text-align: center;
-            font-size: 10px;
-            font-weight: bold;
-        }
-        .menu-content{
-            padding: 0px;
-            margin: 0px;
-        }
-
-        .menu-btn {
-            width: 20%;
-            background-color: #64dcdc;
-            border-color: #64dcdc;
-        }
-
-        .grid {
-            height: 60%;
-            display: grid;
-            grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
-            background-color: rgba(255, 255, 255, 0.5);
-            grid-gap: 2px;
-            padding: 2px;
-        }
-
-        .grid-item {
-            background-color: rgba(255, 255, 255, 0.8);
-            border: 1px solid rgba(0, 0, 0, 0.8);
-
-            padding: 5px;
-            font-size: 15px;
-            text-align: center;
-            /* width: 30px;
-            height: 30px; */
-        }
-    </style>
+    <script defer src="search.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+<div class="menu">
+    <h1>Search Visualizer</h1>
+    <input class="menu-btn" id="target" type="text" placeholder="Target Number">
+    <div class="search-container">
     <div>
-        <div class="menu">
-            <header>Search Visualizer</header>
-            <input class="menu-btn" id="target" type="text" placeholder="Target Number">
-            <div>
-                <header>Binary Search</header>
-                <button class="menu-btn" type="button" onclick="binarySearch()">Search</button>
-                <p class="menu-content">Number of Comparisons:</p>
-                <p class="menu-content" id="binaryComparison">0</p>
-            </div>
-            <div>
-                <header>Linear Search</header>
-                <button class="menu-btn" type="button" onclick="linearSearch()">Search</button>
-                <p class="menu-content">Number of Comparisons:</p>
-                <p class="menu-content" id="linearComparison">0</p>
-            </div>
-        </div>
-        <div class="grid" id="array"></div>
+        <header>Binary Search</header>
+        <button class="menu-btn" type="button" onclick="binarySearch()">Search</button>
+        <p class="menu-content">Number of Comparisons:</p>
+        <p class="menu-content" id="binaryComparison">0</p>
     </div>
-    <script src="search.js"></script>
+    <div>
+        <header>Linear Search</header>
+        <button class="menu-btn" type="button" onclick="linearSearch()">Search</button>
+        <p class="menu-content">Number of Comparisons:</p>
+        <p class="menu-content" id="linearComparison">0</p>
+    </div>
+    </div>
+</div>
+<div class="grid" id="array"></div>
 </body>
 
 </html>
