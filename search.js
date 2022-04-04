@@ -18,7 +18,7 @@ async function binarySearchRecursive(target, low, high, comparisons){
         return -1;
     }
     let mid = Math.floor(low + (high-low) / 2);
-    if(arr[mid]==target){
+    if(arr[mid]===target){
         document.getElementById("arr "+mid).style.backgroundColor = "green";
         return mid;
     }else if(target < arr[mid]){
@@ -43,7 +43,7 @@ async function linearSearch(){
     let target = document.getElementById('target').value;
     for(let i=0;i<100;i++){
         document.getElementById('linearComparison').innerHTML = comparisons;
-        if(arr[i]==target){
+        if(arr[i]===target){
             document.getElementById("arr "+i).style.backgroundColor = "green";
             return i;
         }else{
