@@ -19,18 +19,18 @@ async function binarySearchRecursive(target, low, high, comparisons) {
     }
     let mid = Math.floor(low + (high - low) / 2);
     if (arr[mid] === target) {
-        document.getElementById("arr " + mid).style.backgroundColor = "green";
+        document.getElementById("arr " + mid).style.backgroundColor = "#60bd60";
         return mid;
     } else if (target < arr[mid]) {
         comparisons++;
         document.getElementById("arr " + mid).innerHTML = "<";
-        document.getElementById("arr " + mid).style.backgroundColor = "yellow";
+        document.getElementById("arr " + mid).style.backgroundColor = "#9DAAF2";
         await sleep(250);
         await binarySearchRecursive(target, low, mid - 1, comparisons);
     } else {
         comparisons++;
         document.getElementById("arr " + mid).innerHTML = ">";
-        document.getElementById("arr " + mid).style.backgroundColor = "red";
+        document.getElementById("arr " + mid).style.backgroundColor = "#FF6A3D";
         await sleep(250);
         await binarySearchRecursive(target, mid + 1, high, comparisons);
     }
@@ -44,12 +44,12 @@ async function linearSearch() {
     for (let i = 0; i < 100; i++) {
         document.getElementById('linearComparison').innerHTML = comparisons;
         if (arr[i] === target) {
-            document.getElementById("arr " + i).style.backgroundColor = "green";
+            document.getElementById("arr " + i).style.backgroundColor = "#60bd60";
             return i;
         } else {
             comparisons++;
             await sleep(250);
-            document.getElementById("arr " + i).style.backgroundColor = "red";
+            document.getElementById("arr " + i).style.backgroundColor = "#FF6A3D";
         }
     }
     return -1;
